@@ -47,14 +47,17 @@ MyScript.prototype.initialize = function() {
 
 Grab the PCPM extension from the Chrome Webstore then open up or create a new project in PlayCanvas.
 
-PCPM is opt-in only. It will only run if a *package.json* file exists at the root of the asset registry. To initialize your project to use PCPM, open the **Package Manager Settings** in the Edittor Settings Panel and click the *'+ Add package.json'*.
+PCPM is opt-in only. *It will only run if a **package.json** file exists at the root of the asset registry*. To initialize your project to use PCPM, create a new JSON file in the root of the Asset Registry and rename it to 'package.json'. Refresh the editor page and the PCPM extension manager should now be configured.
 
+### Compiling the code
 
+Your project scripts are now available to the pacakage manager. In order to build your code, [open the Code editor](https://developer.playcanvas.com/en/user-manual/scripting/code-editor/#opening-the-code-editor) for your project and either make a change to a file and save it, or click the PCPM extension icon in the browser window to compile the current code.
 
+## Using the Package Manager
 
-### Importing Modules
+### Importing Local Scripts
 
-PCPM upgrades your scripts to first class [js modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) which means you can export code from any script 
+PCPM upgrades your scripts to [js modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) which means you can export code from any script and imported into another
 
 ```javascript 
 export const util
