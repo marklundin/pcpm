@@ -47,11 +47,11 @@ MyScript.prototype.initialize = function() {
 
 Grab the PCPM extension from the Chrome Webstore then open up or create a new project in PlayCanvas.
 
-PCPM is opt-in only. **It will only run if a *package.json* file exists at the root of the asset registry**. To initialize your project to use PCPM, [create a new JSON file](https://developer.playcanvas.com/en/user-manual/designer/assets/#creating-and-uploading-assets) in the root of the Asset Registry and rename it to 'package.json'. Refresh the editor page and the PCPM extension manager should now be configured.
+PCPM is opt-in only. **It will only run if a *package.json* file exists at the root of the asset registry**. To initialize your project to use PCPM, [create a new JSON file](https://developer.playcanvas.com/en/user-manual/designer/assets/#creating-and-uploading-assets) in the root of the Asset Registry and rename it to **'package.json'** then refresh or open the code editor.
 
 ### Compiling the code
 
-Your project scripts are now available to the pacakage manager. In order to build your code, [open the Code editor](https://developer.playcanvas.com/en/user-manual/scripting/code-editor/#opening-the-code-editor) for your project and either make a change to a file and save it, or click the PCPM extension icon in the browser window to compile the current code.
+Once you have a package.json in the root or your registry your project scripts will be available to the pacakage manager. In order to build your code, [open the Code editor](https://developer.playcanvas.com/en/user-manual/scripting/code-editor/#opening-the-code-editor) for your project and create a new script or make a change to an existing script and then save it. Your code will then be compiled into a built file and if the script is added to a game entity, it will run in the PlayCanvas Launcher.
 
 ## Using the Package Manager
 
