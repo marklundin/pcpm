@@ -45,9 +45,7 @@ MyScript.prototype.initialize = function() {
 
 ## Getting Started
 
-Grab the PCPM extension from the Chrome Webstore then open up or create a new project in PlayCanvas.
-
-PCPM is opt-in only. **It will only run if a *package.json* file exists at the root of the asset registry**. To initialize your project to use PCPM, [create a new JSON file](https://developer.playcanvas.com/en/user-manual/designer/assets/#creating-and-uploading-assets) in the root of the Asset Registry and rename it to **'package.json'** then refresh or open the code editor.
+For a detailed walk through, [follow this guide](https://github.com/marklundin/pcpm/wiki/Getting-Started)
 
 ### Compiling the code
 
