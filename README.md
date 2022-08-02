@@ -45,6 +45,10 @@ MyScript.prototype.initialize = function() {
 
 ## Getting Started
 
+PCPM is a chrome extension that allows you as a Playcanvas developer, to use es modules and more in your projects.
+
+The functionality provided is opt-in only. Even if you have the extension installed it will only run if a package.json file exists at the root of the asset registry for your project.
+
 For a detailed walk through, [follow this guide](https://github.com/marklundin/pcpm/wiki/Getting-Started)
 
 ### Compiling the code
@@ -85,5 +89,22 @@ PCPM also proves experimental support for using TypeScript in your projects
 ### JSX
 Experimental support for JSX is coming soon
 
-### Known Issues
-PCPM relies on the public [PlayCanvas Editor api](https://github.com/playcanvas/editor-api) & private internal api's, and as such, it's highly exposed to any updates to the PlayCanvas Editor. __Therefore things are subject to break and we'd advise caution using PCPM__. There are also a number of known inherent limitations that can cause [issues](https://github.com/wearekuva/pcpm-private/issues/4) using the code editor
+### How does this all work?
+PCPM contains a compiler that syncs with all scripts in your project and compiles them into a single file every time you save. Your asset registry is treated as a file system so local modules can be resolved aswell as remote modules which are loaded from a CDN. To do this, the extension marks all your scripts as 'excluded' which prevents them from being loaded in the launcher. This means any script attributes should resolve correctly as though you were working with the script directly
+
+### Gotchas & Known Issues
+
+#### My code isn't compiling / I can't see any changes
+Make sure you have a valid json file named package.json at the root of the asset registry. PCPM only builds upon save, so make a change to update the build. If in doubt refresh the editor window. 
+
+#### I can't use package XYZ
+In theory, any package from [NPM](https://www.npmjs.com/) should work out of the box, but in practice some modules may have some limitations or strong dependancies on how they're used. If there's a specific module not working for you, report an issue.
+
+#### I can't use a package with a wasm binary
+All remote packages are loaded from a CDN which means any hardcoded references to local wasm binaries may fail. Instead see if you can instantiate the binaries by pointing to a remote hosted CDN
+
+#### It always opens the built.js file when I hit edit in the editor
+Because of the way PlayCanvas associates scripts with particular assets and because all scripts are compiled into a built version, the editor will always open the built.js for any given script
+
+#### I can't install modules from github or from private accounts
+The semantics of modules in package.json doesn't map exactly to how they're used in local projects. This means that scoped imports such as @org/somemodule or [urls modules](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#urls-as-dependencies) do not work for now. If in doubt, use the package manager UI rather than manually editing the package.json file
