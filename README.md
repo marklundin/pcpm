@@ -17,7 +17,7 @@
 
 <!--PCPM is an extension for the PlayCanvas Editor that adds support for Javascript Modules, TypeScript JSX and more. Your PlayCanvas scripts become JS modules which means you can import and export code.-->
 
-__This repo serves to track issues and will eventually contain the packaged chrome extension. For now this is just documentation__
+_Warning! This extension is in beta and should not be used in production_
 
 ## Why?
 When you're creating games in PlayCanvas you'll often find yourself wanting to import or share common code between files, or import some code from a 3rd party libray. Whilst there are a few ways to achieve this they often feel like a workaround. PCPM adds supports for js modules and allows you to import local code, install npm and use ~~TypeScript~~ and ~~JSX~~ in the code editor
